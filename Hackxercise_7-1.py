@@ -18,10 +18,10 @@ class Alice:
         self.a = random.randint(1, p)
 
     def publish(self):
-        return g ** self.a
+        return g ** self.a % p
 
     def compute_secret(self, gb):
-        return gb ** self.a
+        return gb ** self.a % p
 
 class Bob:
 
@@ -29,10 +29,10 @@ class Bob:
         self.b = random.randint(1, p)
 
     def publish(self):
-        return g ** self.b
+        return g ** self.b % p
 
     def compute_secret(self, ga):
-        return ga ** self.b
+        return ga ** self.b % p
 
 alice = Alice()
 bob = Bob()
