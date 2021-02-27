@@ -1,4 +1,4 @@
-# Hackxercise 2
+# Hackxercise_6-2
 
 # Within the following codeboard we prepared a pcap file for you - that is, a traffic capture file collected by wireshark. Your task is to process this file, and extract the source MAC address of the 3rd captured packet.
 
