@@ -15,9 +15,9 @@ def sign(m, private_key):
 
 def verify(m, s, public_key):
     if key.encrypt(s, public_key) == m:
-        return 1
+        return True
     else:
-        return 0
+        return False
         
 #  test
 print(sign(3, private_key))
