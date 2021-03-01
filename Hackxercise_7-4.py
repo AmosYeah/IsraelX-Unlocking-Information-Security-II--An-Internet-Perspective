@@ -14,9 +14,9 @@ def sign(m, private_key):
 
 def verify(m, s, public_key):
     if (s ** public_key[1]) % public_key[0] == m:
-        return 1 # true
+        return True # true
     else:
-        return 0 # false
+        return False # false
         
 #  test
 print(sign(3, private_key))
