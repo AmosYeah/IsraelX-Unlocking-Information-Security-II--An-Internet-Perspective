@@ -1,26 +1,36 @@
-# Hackxercise_6-6
+# Test
 
-# In the following codeboard, use scapy to read the pcap file, which is a recording of some DNS traffic captured with a sniffer (namely, Wireshark), and figure out what is the domain that was being resolved, and what is its IP address.
+# What would be good bases for the prime 13?
+# You are welcome to use the following codeboard to write a program to do the calculations for you.
 
-# Submit your answers in the following text boxes. 
+# Submit your answers in the following text boxes.
 
-# This hackxercise cannot be implemented on your local Python environment because the pcap file is only available inside the Codeboard system.
+# p =13
+# find g to meet the Diffie-Hellman Setup
 
-from scapy.all import *
-from scapy.layers.http import *
-import sys # ignore
-sys.path.insert(0,'.') # ignore
-from create_recording import recording_path # the path to the pcap file of this assignment
+g = 1
+temp = []
+answer = []
 
-#### Don't change the code until this line ####
-
-def show_domain_ip_address():
-    packets = rdpcap(recording_path)
-    for pkt in packets:
-        if pkt.haslayer(DNSQR):
-            domain = pkt[DNSQR].qname.decode("utf-8")
-            print(domain)
-            print(pkt.show())
-    pass # print resolved domain and ip address
-
-show_domain_ip_address()
+def find_base(p):
+    global g
+    global temp
+    while len(answer) < 4:
+        #print("g is " + str(g))
+        #print("answer is " + str(len(answer)))
+        for i in range(1, p-1):
+            item = (g ** i) % p
+            #print("item is " + str(item))
+            temp.append(item)
+            #print("temp is " + str(temp))
+            #print("len(set(temp)) is " + str(len(set(temp))))
+        if len(set(temp)) == (p-1):
+            #print("g is" + g)
+            answer.append(g)
+            #print("answer is " + g)
+        temp = []
+        g = g + 1
+    
+    print(answer)
+        
+find_base(13)
