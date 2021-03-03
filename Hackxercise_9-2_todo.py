@@ -10,8 +10,8 @@
 # HINT
 # SHA1 is a good way to get a digest of a string (Remember hashlib?).
 
-# Number of passing tests: 2
-# Number of failing tests: 1
+# Your solution was successfully submitted.
+# You passed 67% of all tests.
 
 import hashlib
 
